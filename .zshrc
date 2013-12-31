@@ -62,4 +62,4 @@ export PATH=$PATH:/Users/shabithishan/.rvm/gems/ruby-2.0.0-p0/bin:/Users/shabith
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # node module path added
-export PATH =/usr/local/lib/node_modules/npm/bin:$PATH
+export PATH=/usr/local/lib/node_modules/npm/bin:$PATH
