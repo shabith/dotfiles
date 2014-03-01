@@ -1,3 +1,6 @@
+#gitignore.io generator
+function gi() { curl http://www.gitignore.io/api/\$@ ;}
+
 
 # find shorthand
 function f() {
