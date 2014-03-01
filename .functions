@@ -1,5 +1,8 @@
 #gitignore.io generator
-function gig() { curl http://www.gitignore.io/api/"$1";}
+function gig() {
+	curl http://www.gitignore.io/api/"$1" | pbcopy;
+	echo "Copied to clipboad!";
+}
 
 
 # find shorthand
