@@ -1,5 +1,5 @@
 #gitignore.io generator
-function gi() { curl http://www.gitignore.io/api/\$@ ;}
+function gig() { curl http://www.gitignore.io/api/"$1";}
 
 
 # find shorthand
