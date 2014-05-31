@@ -57,6 +57,6 @@ done
 unset file
 
 # Customize to your needs...
-export PATH=$PATH:/Users/shabithishan/.rvm/gems/ruby-2.0.0-p0/bin:/Users/shabithishan/.rvm/gems/ruby-2.0.0-p0@global/bin:/Users/shabithishan/.rvm/rubies/ruby-2.0.0-p0/bin:/Users/shabithishan/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/Users/shabithishan/bin/FDK/Tools/osx:/Users/shabithishan/.rvm/bin
+export PATH=$PATH:$HOME/.rvm/gems/ruby-2.0.0-p0/bin:$HOME/.rvm/gems/ruby-2.0.0-p0@global/bin:$HOME/.rvm/rubies/ruby-2.0.0-p0/bin:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$HOME/bin/FDK/Tools/osx:$HOME/.rvm/bin
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
