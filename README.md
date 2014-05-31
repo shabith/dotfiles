@@ -1,4 +1,7 @@
-# Mathias’s dotfiles
+# Shabith's dotfiles
+
+This contains my personal dotfiles which is mainly based on [mathias](https://github.com/mathiasbynens/dotfiles/)'s.
+
 
 ## Installation
 
