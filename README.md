@@ -2,6 +2,13 @@
 
 This contains my personal dotfiles which is mainly based on [mathias](https://github.com/mathiasbynens/dotfiles/)'s.
 
+## Acknowledgements
+
+Inspiration and code was taken from many dotfiles from github.
+* [@paulirish] (https://github.com/paulirish/) - [dotfiles] (https://github.com/paulirish/dotfiles)
+* [@addyosmani] (https://github.com/addyosmani/) - [dotfiles] (https://github.com/addyosmani/dotfiles)
+
+
 
 ## Installation
 

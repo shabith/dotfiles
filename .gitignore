@@ -15,3 +15,4 @@ Thumbs.db
 
 # file that contains sensible information
 .extra
+.path

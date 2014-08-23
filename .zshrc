@@ -56,7 +56,3 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 done
 unset file
 
-# Customize to your needs...
-export PATH=$PATH:$HOME/.rvm/gems/ruby-2.0.0-p0/bin:$HOME/.rvm/gems/ruby-2.0.0-p0@global/bin:$HOME/.rvm/rubies/ruby-2.0.0-p0/bin:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:$HOME/bin/FDK/Tools/osx:$HOME/.rvm/bin
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
