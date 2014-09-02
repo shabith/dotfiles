@@ -16,28 +16,25 @@ Inspiration and code was taken from many dotfiles from github.
 
 You can clone the repository wherever you want. (I like to keep it in `~/Projects/dotfiles`, with `~/dotfiles` as a symlink.) The bootstrapper script will pull in the latest version and copy the files to your home folder.
 
-```bash
-git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && source bootstrap.sh
+```zsh
+git clone https://github.com/mathiasbynens/dotfiles.git && cd dotfiles && sh bootstrap.sh
 ```
 
 To update, `cd` into your local `dotfiles` repository and then:
 
-```bash
-source bootstrap.sh
+```zsh
+sh bootstrap.sh
 ```
 
 Alternatively, to update while avoiding the confirmation prompt:
 
-```bash
-set -- -f; source bootstrap.sh
+```zsh
+sh bootstrap.sh -f 
 ```
+or
 
-### Git-free install
-
-To install these dotfiles without Git:
-
-```bash
-cd; curl -#L https://github.com/mathiasbynens/dotfiles/tarball/master | tar -xzv --strip-components 1 --exclude={README.md,bootstrap.sh,LICENSE-MIT.txt}
+```zsh
+sh bootstrap.sh -force
 ```
 
 To update later on, just run that command again.
@@ -102,6 +99,12 @@ Suggestions/improvements
 
 ## Author
 
+| [![twitter/shabith](https://s.gravatar.com/avatar/540a46b04f16a3d2cc10546e0916b04e?s=70)](http://twitter.com/shabith "Follow @shabith on Twitter") |
+|---|
+| [Shabith Ishan](http://shabithishan.com/) |
+
+
+## Based on
 | [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](http://twitter.com/mathias "Follow @mathias on Twitter") |
 |---|
 | [Mathias Bynens](http://mathiasbynens.be/) |
