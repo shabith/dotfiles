@@ -16,10 +16,10 @@ alias h="history"
 alias j="jobs"
 
 #git shortcuts
-alias aa="add -A"
-alias st="status"
-alias co="checkout"
-alias cm="commit -m"
+alias gaa="git add -A"
+alias gst="git status"
+alias gco="git checkout"
+alias gcm="git commit -m"
 
 
 # Detect which `ls` flavor is in use
