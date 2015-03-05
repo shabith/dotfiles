@@ -48,6 +48,10 @@ source $ZSH/oh-my-zsh.sh
 # init z   https://github.com/rupa/z
 . ~/code/z/z.sh
 
+autoload bashcompinit
+bashcompinit
+source $HOME/bin/wp-autocomplete.bash
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
