@@ -14,7 +14,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN="$fg[green]"
 
 CURRENT_BG='NONE'
 SEGMENT_SEPARATOR='⮀'
- 
+
 ONLINE='%{%F{green}%}◉'
 OFFLINE='%{%F{red}%}⦿'
 
@@ -65,13 +65,12 @@ function put_spacing() {
 
   local spacing=""
   for i in {1..$termwidth}; do
-    spacing="${spacing} " 
+    spacing="${spacing} "
   done
   echo $spacing
 }
 
 function precmd() {
 print -rP '
-$fg[cyan]%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info) $(battery_charge)   $(prompt_online) '
+$fg[cyan]%m: $fg[yellow]$(get_pwd)$(put_spacing)$(git_prompt_info) $(prompt_online) '
 }
-
