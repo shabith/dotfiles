@@ -53,15 +53,9 @@ function put_spacing() {
     git=0
   fi
 
-  local bat=$(battery_charge)
-  if [ ${#bat} != 0 ]; then
-    ((bat = ${#bat} - 18))
-  else
-    bat=0
-  fi
 
   local termwidth
-  (( termwidth = ${COLUMNS} - 3 - ${#HOST} - ${#$(get_pwd)} - ${bat} - ${git} ))
+  (( termwidth = ${COLUMNS} - 3 - ${#HOST} - ${#$(get_pwd)} - ${git} ))
 
   local spacing=""
   for i in {1..$termwidth}; do
