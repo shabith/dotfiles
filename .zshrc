@@ -45,8 +45,8 @@ plugins=(git aws bgnotify boot2docker common-aliases github gitignore httpie jso
 
 source $ZSH/oh-my-zsh.sh
 
-# init z   https://github.com/rupa/z
-. ~/code/z/z.sh
+# # init z   https://github.com/rupa/z
+# . ~/code/z/z.sh
 
 autoload bashcompinit
 bashcompinit
