@@ -163,3 +163,6 @@ command -v npm > /dev/null && alias npme="npm --registry http://registry.npmjs.e
 
 #tree view
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g' | more"
+
+#mamp php
+alias mphp="/Applications/MAMP/bin/php/php7.0.15/bin/php"

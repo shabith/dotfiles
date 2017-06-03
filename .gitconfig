@@ -131,9 +131,17 @@
 [commit]
 
 	# https://help.github.com/articles/signing-commits-using-gpg/
-	gpgsign = true
+	gpgsign = false
 
 [diff]
+tool = meld
+
+[difftool]
+prompt = false
+
+[difftool "meld"]
+trustExitCode = true
+cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
 
 	# Detect copies as well as renames
 	renames = copies
