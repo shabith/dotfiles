@@ -410,10 +410,10 @@ function tre() {
 function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*; }
 
 #check which app using port
-fucntion check_port () {
-	if [ $# -eq 0 ]; then
-		lsof -i :80;
-	else
-		sudo lsof -i :$1;
-	fi;
-}
+#function check_port () {
+#	if [ $# -eq 0 ]; then
+#		lsof -i :80;
+#	else
+#		sudo lsof -i :$1;
+#	fi;
+#}
