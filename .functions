@@ -13,7 +13,7 @@ function gh() {
      echo "Not a git repository or no remote.origin.url set"
      exit 1;
   fi
- 
+
   giturl=${giturl/git\@github\.com\:/https://github.com/}
   giturl=${giturl/\.git}
   branch="$(git symbolic-ref HEAD 2>/dev/null)" ||
@@ -29,7 +29,7 @@ function gh() {
 # Based on https://github.com/stephenplusplus/dots/blob/master/.bash_profile#L68 by @stephenplusplus
 #
 # Note: subl is already setup as a shortcut to Sublime. Replace with your own editor if different
-# 
+#
 # - arg 1 - url|username|repo remote endpoint, username on github, or name of
 #           repository.
 # - arg 2 - (optional) name of repo
@@ -38,20 +38,20 @@ function gh() {
 #   $ clone things
 #     .. git clone git@github.com:addyosmani/things.git things
 #     .. cd things
-#     .. subl .
+#     .. code .
 #
 #   $ clone yeoman generator
 #     .. git clone git@github.com:yeoman/generator.git generator
 #     .. cd generator
-#     .. subl .
+#     .. code .
 #
 #   $ clone git@github.com:addyosmani/dotfiles.git
 #     .. git clone git@github.com:addyosmani/dotfiles.git dotfiles
 #     .. cd dots
-#     .. subl .
+#     .. code .
 
 function clone {
-  # customize username to your own 
+  # customize username to your own
   local username="shabith"
 
   local url=$1;
@@ -71,13 +71,13 @@ function clone {
     url="git@github.com:$url/$repo.git";
   fi
 
-  git clone $url $repo && cd $repo && subl .;
+  git clone $url $repo && cd $repo && code .;
 }
 
 # simple git log
 # usage glr v0.2.2 v0.2.3
 function glr() {
-    git log $1 $2 --pretty=format:'* %h %s' --date=short --no-merges 
+    git log $1 $2 --pretty=format:'* %h %s' --date=short --no-merges
 }
 
 # git log with per-commit cmd-clickable GitHub URLs (iTerm)
@@ -214,8 +214,8 @@ function targz() {
 	tar -cvf "${tmpFile}" --exclude=".DS_Store" "${@}" || return 1;
 
 	size=$(
-		stat -f"%z" "${tmpFile}" 2> /dev/null; # OS X `stat`
-		stat -c"%s" "${tmpFile}" 2> /dev/null # GNU `stat`
+		stat -f"%z" "${tmpFile}" 2> /dev/null; # macOS `stat`
+		stat -c"%s" "${tmpFile}" 2> /dev/null;  # GNU `stat`
 	);
 
 	local cmd="";
@@ -230,10 +230,16 @@ function targz() {
 		fi;
 	fi;
 
-	echo "Compressing .tar using \`${cmd}\`…";
+	echo "Compressing .tar ($((size / 1000)) kB) using \`${cmd}\`…";
 	"${cmd}" -v "${tmpFile}" || return 1;
 	[ -f "${tmpFile}" ] && rm "${tmpFile}";
-	echo "${tmpFile}.gz created successfully.";
+
+	zippedSize=$(
+		stat -f"%z" "${tmpFile}.gz" 2> /dev/null; # macOS `stat`
+		stat -c"%s" "${tmpFile}.gz" 2> /dev/null; # GNU `stat`
+	);
+
+	echo "${tmpFile}.gz ($((zippedSize / 1000)) kB) created successfully.";
 }
 
 # Determine size of a file or total size of a directory
@@ -265,15 +271,6 @@ function dataurl() {
 		mimeType="${mimeType};charset=utf-8";
 	fi
 	echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
-}
-
-# Create a git.io short URL
-function gitio() {
-	if [ -z "${1}" -o -z "${2}" ]; then
-		echo "Usage: \`gitio slug url\`";
-		return 1;
-	fi;
-	curl -i https://git.io/ -F "url=${2}" -F "code=${1}";
 }
 
 # Start an HTTP server from a directory, optionally specifying the port
@@ -327,24 +324,6 @@ function escape() {
 	fi;
 }
 
-# Decode \x{ABCD}-style Unicode escape sequences
-function unidecode() {
-	perl -e "binmode(STDOUT, ':utf8'); print \"$@\"";
-	# print a newline unless we’re piping the output to another program
-	if [ -t 1 ]; then
-		echo ""; # newline
-	fi;
-}
-
-# Get a character’s Unicode code point
-function codepoint() {
-	perl -e "use utf8; print sprintf('U+%04X', ord(\"$@\"))";
-	# print a newline unless we’re piping the output to another program
-	if [ -t 1 ]; then
-		echo ""; # newline
-	fi;
-}
-
 # Show all the names (CNs and SANs) listed in the SSL certificate
 # for a given domain
 function getcertnames() {
@@ -389,16 +368,6 @@ function s() {
 	fi;
 }
 
-# `a` with no arguments opens the current directory in Atom Editor, otherwise
-# opens the given location
-function a() {
-	if [ $# -eq 0 ]; then
-		atom .;
-	else
-		atom "$@";
-	fi;
-}
-
 # `v` with no arguments opens the current directory in Vim, otherwise opens the
 # given location
 function v() {
@@ -406,6 +375,16 @@ function v() {
 		vim .;
 	else
 		vim "$@";
+	fi;
+}
+
+# `c` with no arguments opens the current directory in Code, otherwise opens the
+# given location
+function c() {
+	if [ $# -eq 0 ]; then
+		code .;
+	else
+		code "$@";
 	fi;
 }
 
@@ -429,3 +408,12 @@ function tre() {
 
 #use 'code' to open folder/file in visual code
 function code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*; }
+
+#check which app using port
+fucntion check_port () {
+	if [ $# -eq 0 ]; then
+		lsof -i :80;
+	else
+		sudo lsof -i :$1;
+	fi;
+}
