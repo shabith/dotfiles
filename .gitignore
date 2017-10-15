@@ -15,6 +15,7 @@ Thumbs.db
 # file that contains sensible information
 .extra
 .path
+.code
 
 # Directories potentially created on remote AFP share
 .AppleDB
