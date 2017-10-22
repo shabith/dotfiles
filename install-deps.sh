@@ -19,9 +19,6 @@ npm install -g nave
 
 #pure theme - pretty, minimal and fash ZSH prompt
 npm install -g pure-prompt
-#pure theme dependecy - https://github.com/zsh-users/zsh-syntax-highlighting
-brew install zsh-syntax-highlighting
-
 
 # https://github.com/rupa/z
 # z, oh how i love you

@@ -93,5 +93,8 @@ brew install tree
 brew install vbindiff
 brew install zopfli
 
+#pure theme dependecy - https://github.com/zsh-users/zsh-syntax-highlighting
+brew install zsh-syntax-highlighting
+
 # Remove outdated versions from the cellar.
 brew cleanup
