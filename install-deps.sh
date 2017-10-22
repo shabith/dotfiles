@@ -7,10 +7,6 @@
 # the `push` command which copies the github compare URL to my clipboard is heaven
 bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
 
-# https://rvm.io
-# rvm for the rubiess
-curl -L https://get.rvm.io | bash -s stable --ruby
-
 # https://github.com/isaacs/nave
 # needs npm, obviously.
 # TODO: I think i'd rather curl down the nave.sh, symlink it into /bin and use that for initial node install.
@@ -19,8 +15,12 @@ npm install -g nave
 
 # homebrew!
 # you need the code CLI tools YOU FOOL.
-ruby <(curl -fsSkL raw.github.com/homebrew/homebrew/go/install)
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
+#pure theme - pretty, minimal and fash ZSH prompt
+npm install -g pure-prompt
+#pure theme dependecy - https://github.com/zsh-users/zsh-syntax-highlighting
+brew install zsh-syntax-highlighting
 
 
 # https://github.com/rupa/z
