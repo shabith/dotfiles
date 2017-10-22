@@ -1,0 +1,14 @@
+#Customization
+
+#PRMPT
+#iterm2 - iterm2-snazzy colors - https://github.com/sindresorhus/iterm2-snazzy
+#font - Menlo font
+#zsh theme - pure
+#plugin - zsh-syntex-highlighting
+
+autoload -U promptinit; promptinit
+#define prompt options here
+
+prompt pure
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
