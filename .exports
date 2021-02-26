@@ -1,5 +1,5 @@
-# Make ST3 the default editor
-export EDITOR="subl -w"
+# Make Visual Studio Code the default editor
+export EDITOR="code -w"
 # Enable persistent REPL history for `node`.
 export NODE_REPL_HISTORY=~/.node_history;
 # Allow 32³ entries; the default is 1000.
@@ -32,3 +32,6 @@ export GPG_TTY=$(tty);
 
 # Hide the “default interactive shell is now zsh” warning on macOS.
 export BASH_SILENCE_DEPRECATION_WARNING=1;
+
+# xdebug for visual code
+export XDEBUG_CONFIG="sidekey=VSCODE"
