@@ -1,21 +1,15 @@
-#Shamelessly copied from Paul Irish(github.com/paulirish/dotfiles/) I know he wouldn't mind.
+#Shamelessly copied some stuff from Paul Irish(github.com/paulirish/dotfiles/) I know he wouldn't mind.
 
 # up to you (me) if you want to run this as a file or copy paste at your leisure
 
-
-# https://github.com/jamiew/git-friendly
-# the `push` command which copies the github compare URL to my clipboard is heaven
-bash < <( curl https://raw.github.com/jamiew/git-friendly/master/install.sh)
-
-# https://github.com/isaacs/nave
-# needs npm, obviously.
-# TODO: I think i'd rather curl down the nave.sh, symlink it into /bin and use that for initial node install.
-npm install -g nave
+# https://github.com/lukechilds/zsh-nvm
+# Node Version Manager as Zsh Plugin - This comes handy when we have to deal with multiple version of Node.js
+git clone https://github.com/lukechilds/zsh-nvm ./.oh-my-zsh/custom/plugins/zsh-nvm
 
 
 # homebrew!
 # you need the code CLI tools YOU FOOL.
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 #pure theme - pretty, minimal and fash ZSH prompt
 npm install -g pure-prompt
@@ -29,30 +23,5 @@ npm install -g pure-prompt
 
 # z binary is already referenced from .bash_profile
 
-
-# https://github.com/dronir/SpotifyControl
-# Spotify Controll Script
-cd ~/code
-git clone git://github.com/dronir/SpotifyControl.git
-
-# https://github.com/jeroenbegyn/VLCControl
-# VLC Controll Script
-cd ~/code
-git clone git://github.com/jeroenbegyn/VLCControl.git
-
-
-# my magic photobooth symlink -> dropbox. I love it.
-# first move Photo Booth folder out of Pictures
-# then start Photo Booth. It'll ask where to put the library.
-# put it in Dropbox/public
-
-# now you can record photobooth videos quickly and they upload to dropbox DURING RECORDING
-# then you grab public URL and send off your video message in a heartbeat.
-
-
 # for the c alias (syntax highlighted cat)
 sudo easy_install Pygments
-
-
-# chrome canary as default
-# on a mac you can set chrome canary as your default inside of Safari preferences :)
